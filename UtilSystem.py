@@ -48,7 +48,7 @@ def startSchedule(trigger, function, args=None, job_defaults=None):
         for (key, value) in job_defaults.items():
             default_job_defaults[key] = value
 
-    scheduler = BackgroundScheduler(job_defaults=job_defaults)
+    scheduler = BackgroundScheduler(job_defaults=default_job_defaults)
 
     scheduler.add_job(
         trigger=trigger,
