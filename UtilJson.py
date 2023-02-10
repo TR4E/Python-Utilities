@@ -1,6 +1,7 @@
 import json
 
 import UtilFile
+import UtilPython
 
 
 def getJson(path):
@@ -16,9 +17,7 @@ def getJson(path):
 
 
 def saveJson(path, new_data, overwrite=False):
-    data = dict()
-    if overwrite:
-        data = dict(getJson(path).items())
+    data = UtilPython.getByCondition(overwrite, dict(), dict(getJson(path).items()))
 
     for (key, value) in new_data.items():
         data[key] = value
